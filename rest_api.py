@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
+from hackerrank import kaprekarNumbers
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
@@ -62,6 +63,11 @@ def permutation_equation():
 @app.route('/equality/delete/<delete_resource>', methods=['DELETE'])
 def delete_resource(delete_resource):
     return jsonify({'message': f'Deleted resource {delete_resource}'})
+
+@app.route('/hackerrank/kaprekar', methods=['GET'])
+def endpoint_kaprekar():
+    result = kaprekarNumbers(1, 100)
+    return jsonify({'hasilnya:':result})
 
 if __name__ == '__main__':
     app.debug = True

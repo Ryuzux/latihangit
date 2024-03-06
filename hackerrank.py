@@ -15,8 +15,6 @@ def kaprekarNumbers(p, q):
         p += 1
     if kaprekar_list:
         hasil_string = ' '.join(map(str, kaprekar_list))
-        print(hasil_string)
+        return hasil_string
     else:
-        print("INVALID RANGE")
-
-print(kaprekarNumbers(1, 100))
+        return "INVALID RANGE"
